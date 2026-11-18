@@ -33,10 +33,10 @@ const features: { group: string; rows: [string, string][] }[] = [
 ];
 
 const steps = [
-  ["Download the zip", "Get the bot from the download button. No coding needed to start."],
-  ["Ask an AI to walk you through hosting", "Upload the zip to Claude, ChatGPT or Gemini and say you are a beginner. It explains each step."],
-  ["Link your WhatsApp", "The bot prints a pairing code. Enter it under Linked devices > Link with phone number."],
-  ["Message yourself “menu”", "That is it. Add your first task and it starts reminding you."],
+  ["Download the files", "Open the GitHub page and choose Code > Download ZIP."],
+  ["Put it on a host that stays on", "The bot must run all day to send reminders. The free options are in the next section."],
+  ["Link a spare WhatsApp line", "The bot shows a pairing code. On the spare line, open WhatsApp > Linked devices > Link with phone number and enter it."],
+  ["Message the bot “menu”", "Chat with it from your main WhatsApp. Add your first task and it starts reminding you."],
 ];
 
 const perks: [string, string, string][] = [
@@ -100,15 +100,23 @@ export default function Home() {
         </section>
 
         <section id="start" className="block">
-          <h2>Set it up without writing code</h2>
-          <p className="sub">The bot runs on your own number and your own host, so your data stays with you. Four steps:</p>
+          <h2>Get started</h2>
+          <p className="sub">The bot runs on your own host, so your data stays with you.</p>
           <ol className="steps">
             {steps.map(([t, d]) => (
               <li key={t}><strong>{t}</strong><span>{d}</span></li>
             ))}
           </ol>
-          <p className="note">
-            It obeys only you. Everyone else, including people in your groups, is ignored.
+          <aside className="callout" aria-label="Use a spare line">
+            <strong>Use a spare line, not your main WhatsApp number.</strong>
+            <span>
+              The bot uses an unofficial connection, and WhatsApp can restrict numbers that use one. A spare SIM keeps your main account safe.
+              Link the bot to the spare line, then set your main number as the owner in the settings file (<code>OWNER_NUMBER</code>). You chat with it from your main WhatsApp, and it obeys only you.
+            </span>
+          </aside>
+          <p className="actions">
+            <a className="btn primary" href={site.downloadUrl}>Download from GitHub</a>
+            {site.tutorialUrl && <a className="btn" href={site.tutorialUrl}>Watch the setup tutorial</a>}
           </p>
         </section>
 
@@ -146,7 +154,7 @@ cmd({ pattern: 'hello', desc: 'Say hello', category: 'else' },
       </main>
 
       <footer>
-        <p>mypai is not affiliated with or endorsed by WhatsApp. It uses an unofficial library, so use a number you are comfortable with.</p>
+        <p>mypai is not affiliated with or endorsed by WhatsApp. It uses an unofficial library, so run it on a spare line and keep your main number out of it.</p>
         <p><a href={site.downloadUrl}>Download</a>{site.sourceUrl && <> · <a href={site.sourceUrl}>Source</a></>}</p>
       </footer>
     </>

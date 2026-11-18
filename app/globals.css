@@ -85,6 +85,10 @@ h2{font-size:clamp(30px,4.5vw,46px);font-weight:800;margin-bottom:8px}
 .steps strong{font-size:18px}
 .steps span{color:var(--soft)}
 
+.callout{display:grid;gap:4px;max-width:66ch;margin:24px 0 8px;padding:14px 18px;background:var(--paper);border:2px solid var(--ink);border-left:8px solid var(--margin);border-radius:10px;line-height:1.5}
+.callout strong{font-size:18px}
+.callout span{color:var(--soft)}
+.callout code{background:var(--mark);color:var(--ink);padding:0 5px;border-radius:4px}
 .table-wrap{overflow-x:auto;background:var(--paper);border:2px solid var(--ink);border-radius:12px}
 table{border-collapse:collapse;width:100%;min-width:640px;line-height:1.45;font-size:15.5px}
 th,td{text-align:left;padding:10px 14px;vertical-align:top;border-bottom:1px solid var(--line)}

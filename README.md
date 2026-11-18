@@ -14,8 +14,8 @@ npm run build      # production check
 
 Open `lib/site.ts` and set:
 
-- `downloadUrl`: where people download the bot zip (every "Download" button uses it)
-- `sourceUrl`: your GitHub link, or leave it empty to hide the link
+- `downloadUrl` and `sourceUrl`: already set to the mypai-public GitHub repository
+- `tutorialUrl`: add your setup tutorial link when it is ready. Until then the tutorial button stays hidden
 - `studentPackUrl`: the GitHub Student Developer Pack link (already set)
 
 The offers table is in `app/page.tsx` (`perks`). It was researched on 18 Nov 2026. Student offers change often, so re-check the live pages and update `researchedOn` in `lib/site.ts` when you do.
